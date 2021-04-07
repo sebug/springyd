@@ -19,3 +19,7 @@ Save the password and tenant in environment variables as well
 
     export SPRINGYD_TENANT={tenant_id}
     export SPRINGYD_APP_SECRET={password}
+
+Now that you have the tenant id, we can already quickly verify the basic information for our Spring Boot OAuth config - go to
+https://login.microsoftonline.com/{tenant_id}/v2.0/.well-known/openid-configuration . There you'll see the different paths
+that we can enter in the application.properties afterwards.
