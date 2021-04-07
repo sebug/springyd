@@ -23,3 +23,7 @@ Save the password and tenant in environment variables as well
 Now that you have the tenant id, we can already quickly verify the basic information for our Spring Boot OAuth config - go to
 https://login.microsoftonline.com/{tenant_id}/v2.0/.well-known/openid-configuration . There you'll see the different paths
 that we can enter in the application.properties afterwards.
+
+Finally, we'll have to set up the return urls, let's add the one for localhost already:
+
+    az ad app update --id $SPRINGYD_APP_ID --reply-urls http://localhost:8081/login/oauth2/code/custauth
