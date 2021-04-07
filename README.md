@@ -9,6 +9,13 @@ Jot down the app id. We want to store this not in source control, so let's use a
 
     export SPRINGYD_APP_ID={the_guid_of_your_app}
 
-And then we'll reference it in application.properties
+And then we'll reference it in application.properties.
 
-    
+Now we'll need an app secret
+
+    az ad app credential reset --id $SPRINGYD_APP_ID
+
+Save the password and tenant in environment variables as well
+
+    export SPRINGYD_TENANT={tenant_id}
+    export SPRINGYD_APP_SECRET={password}
